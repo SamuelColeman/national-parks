@@ -2,3 +2,8 @@ export const hasError = (errorMsg) => ({
   type: 'HAS_ERROR',
   errorMsg
 })
+
+export const getParks = (parks) => ({
+	type: 'GET_PARKS',
+	parks
+})

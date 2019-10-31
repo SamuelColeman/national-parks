@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import './App.css';
-import { getParks } from '../../apiCalls';
-import { hasError } from '../../actions';
+import { fetchParks } from '../../apiCalls';
+import { hasError, getParks } from '../../actions';
 
 export class App extends Component {
   constructor() {
@@ -18,9 +20,10 @@ export class App extends Component {
   submitState = async (state) => {
     const { hasError } = this.props;
     try {
-      const parks = await getParks(state);
+      const parks = await fetchParks(state);
+      getParks(parks);
     } catch (error) {
-      hasError(error.message)
+      hasError(error.message);
     }
   }
 
@@ -44,4 +47,14 @@ export class App extends Component {
   }
 }
 
-export default App;
+export const mapStateToProps = (state) => ({
+  parks: state.parks
+});
+
+export const mapDispatchToProps = (dispatch) => (
+  bindActionCreators({
+    hasError
+  }, dispatch)
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
