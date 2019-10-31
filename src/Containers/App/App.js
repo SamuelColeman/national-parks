@@ -1,23 +1,33 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import './App.css';
-import { getParks } from '../../apiCalls';
+import { fetchParks } from '../../apiCalls';
+import { hasError, getParks } from '../../actions';
+import { Route, Link } from 'react-router-dom';
+import ParksContainer from '../ParksContainer/ParksContainer';
+import Form from '../Form/Form';
 
 export class App extends Component {
-  async componentDidMount() {
-    try {
-      const parks = await getParks();
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   render() {
     return (
       <div className="App">
-        <h1>National Parks</h1>
+        <Route exact path='/parks' render={() => <ParksContainer />} />
+        <Route exact path='/' render={() => <Form />} />
       </div>
     );
   }
 }
 
-export default App;
+export const mapStateToProps = (state) => ({
+  parks: state.parks
+});
+
+export const mapDispatchToProps = (dispatch) => (
+  bindActionCreators({
+    hasError,
+    getParks
+  }, dispatch)
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
