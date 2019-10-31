@@ -30,7 +30,7 @@ export class Form extends Component {
         <h1>National Parks</h1>
         <h2>Select State:</h2>
         <input 
-          
+          type='text' 
           value={selectedState} 
           placeholder='State' 
           maxLength='2'
