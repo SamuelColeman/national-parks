@@ -19,10 +19,10 @@ export class Form extends Component {
   }
 
   submitState = async (state) => {
-    const { hasError } = this.props;
+    const { hasError, getParks } = this.props;
     try {
       const parks = await fetchParks(state);
-      getParks(parks);
+      getParks(parks)
     } catch (error) {
       hasError(error.message);
     }
