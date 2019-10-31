@@ -4,44 +4,16 @@ import { connect } from 'react-redux';
 import './App.css';
 import { fetchParks } from '../../apiCalls';
 import { hasError, getParks } from '../../actions';
+import { Route, Link } from 'react-router-dom';
+import ParksContainer from '../ParksContainer/ParksContainer';
+import Form from '../Form/Form';
 
 export class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      selectedState: ''
-    }
-  }
-
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  }
-
-  submitState = async (state) => {
-    const { hasError } = this.props;
-    try {
-      const parks = await fetchParks(state);
-      getParks(parks);
-    } catch (error) {
-      hasError(error.message);
-    }
-  }
-
   render() {
-    const { selectedState } = this.state;
     return (
       <div className="App">
-        <h1>National Parks</h1>
-        <h2>Select State:</h2>
-        <input 
-          type='text' 
-          name='selectedState' 
-          value={selectedState} 
-          placeholder='State' 
-          maxLength='2'
-          onChange={this.handleChange} 
-          />
-        <button onClick={() => this.submitState(selectedState)}>Submit</button>
+        <Route exact path='/parks' render={() => <ParksContainer />} />
+        <Route exact path='/' render={() => <Form />} />
       </div>
     );
   }
@@ -53,7 +25,8 @@ export const mapStateToProps = (state) => ({
 
 export const mapDispatchToProps = (dispatch) => (
   bindActionCreators({
-    hasError
+    hasError,
+    getParks
   }, dispatch)
 )
 
