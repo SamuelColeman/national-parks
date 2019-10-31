@@ -7,3 +7,8 @@ export const getParks = (parks) => ({
 	type: 'GET_PARKS',
 	parks
 })
+
+export const selectState = (selectedState) => ({
+	type: 'SELECT_STATE',
+	selectedState
+})
