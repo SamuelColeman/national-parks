@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 export const ParksContainer = ({ parks }) => {
-	const mappedParks = parks.forEach(park => {
+	const mappedParks = parks.map(park => {
 		return <ParkCard {...park} />
 	})
 	return (
@@ -13,7 +13,7 @@ export const ParksContainer = ({ parks }) => {
 			<h1>National Parks</h1>
 			<input type='text' placeholder='Search' />
 			<button>Search</button>
-			<div>{}</div>
+			<div>{mappedParks}</div>
 		</section>
 	)
 }
