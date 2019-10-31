@@ -3,19 +3,14 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import './Form.css';
 import { fetchParks } from '../../apiCalls';
-import { hasError, getParks } from '../../actions';
+import { hasError, getParks, selectState } from '../../actions';
 import { Link } from 'react-router-dom';
 
 export class Form extends Component {
-  constructor() {
-    super();
-    this.state = {
-      selectedState: ''
-    }
-  }
 
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    const { selectState } = this.props;
+    selectState(e.target.value);
   }
 
   submitState = async (state) => {
@@ -29,14 +24,13 @@ export class Form extends Component {
   }
 
   render() {
-    const { selectedState } = this.state;
+    const { selectedState } = this.props;
     return (
       <section>
         <h1>National Parks</h1>
         <h2>Select State:</h2>
         <input 
           type='text' 
-          name='selectedState' 
           value={selectedState} 
           placeholder='State' 
           maxLength='2'
@@ -51,13 +45,15 @@ export class Form extends Component {
 }
 
 export const mapStateToProps = (state) => ({
-  parks: state.parks
+  parks: state.parks,
+  selectedState: state.selectedState
 });
 
 export const mapDispatchToProps = (dispatch) => (
   bindActionCreators({
     hasError,
-    getParks
+    getParks,
+    selectState
   }, dispatch)
 )
 
