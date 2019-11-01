@@ -20,7 +20,7 @@ export class App extends Component {
             const { id } = match.params;
             const matchPark = parks.find(park => park.id === id);
             return (
-              <ParkCard {...matchPark} />
+              <ParkCard {...matchPark} page={true} />
           )}} />
       </div>
     );
