@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import './Form.css';
 import { fetchParks } from '../../apiCalls';
-import { hasError, getParks, selectState } from '../../actions';
+import { hasError, getParks, selectState, isLoading } from '../../actions';
 import { Link } from 'react-router-dom';
 
 export class Form extends Component {
@@ -17,7 +17,7 @@ export class Form extends Component {
     const { hasError, getParks } = this.props;
     try {
       const parks = await fetchParks(state);
-      getParks(parks)
+      getParks(parks);
     } catch (error) {
       hasError(error.message);
     }
@@ -32,7 +32,7 @@ export class Form extends Component {
         <input 
           className='form_input'
           type='text' 
-          value={selectedState}  
+          value={selectedState} 
           maxLength='2'
           onChange={this.handleChange} 
           />

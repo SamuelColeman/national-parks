@@ -12,3 +12,9 @@ export const selectState = (selectedState) => ({
 	type: 'SELECT_STATE',
 	selectedState
 })
+
+
+export const getVisitorCenters = (visitorCenters) => ({
+	type: 'GET_VISITOR_CENTERS',
+	visitorCenters
+})
