@@ -1,0 +1,20 @@
+.form {
+	background-image: url('../../images/np_background.jpg');
+	margin: 0;
+	height: 100vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.form_title {
+	margin: 0;
+  font-size: 15vh;
+  padding: 4%;
+  color: tan;
+}
+
+.form_text {
+	font-size: 5vh;
+	color: tan;
+}

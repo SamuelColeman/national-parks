@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export const ParkCard = ({ name, designation, id }) => {
 	return (
 		<Link to={`/parks/${id}`}>
-			<section>
+			<section className='park_card'>
 				<h2>{name}</h2>
 				<h3>{designation}</h3>
 			</section>

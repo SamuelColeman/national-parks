@@ -9,7 +9,7 @@ export const ParksContainer = ({ parks, selectedState }) => {
 		return <ParkCard {...park} />
 	})
 	return (
-		<section>
+		<section className='parks_container'>
 			<h1>National Parks in {selectedState}</h1>
 			<input type='text' placeholder='Search' />
 			<button>Search</button>
