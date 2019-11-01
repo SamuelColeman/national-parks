@@ -7,6 +7,7 @@ import { hasError, getParks } from '../../actions';
 import { Route, Link } from 'react-router-dom';
 import ParksContainer from '../ParksContainer/ParksContainer';
 import Form from '../Form/Form';
+import ParkCard from '../ParkCard/ParkCard';
 
 export class App extends Component {
   render() {
@@ -14,6 +15,15 @@ export class App extends Component {
       <div className="App">
         <Route exact path='/parks' render={() => <ParksContainer />} />
         <Route exact path='/' render={() => <Form />} />
+        <Route exact path='/parks/:id' render={({ match }) => {
+            let { parks } = this.props;
+            const { id } = match.params;
+            console.log(id)
+            const matchPark = parks.find(park => park.id === id
+            );
+            return (
+              <ParkCard {...matchPark} />
+          )}} />
       </div>
     );
   }
