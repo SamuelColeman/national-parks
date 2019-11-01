@@ -18,9 +18,7 @@ export class App extends Component {
         <Route exact path='/parks/:id' render={({ match }) => {
             let { parks } = this.props;
             const { id } = match.params;
-            console.log(id)
-            const matchPark = parks.find(park => park.id === id
-            );
+            const matchPark = parks.find(park => park.id === id);
             return (
               <ParkCard {...matchPark} />
           )}} />
