@@ -26,13 +26,13 @@ export class Form extends Component {
   render() {
     const { selectedState } = this.props;
     return (
-      <section>
-        <h1>National Parks</h1>
-        <h2>Select State:</h2>
+      <section className='form'>
+        <h1 className='form_title'>National Parks Directory</h1>
+        <h2 className='form_text'>Select State:</h2>
         <input 
+          className='form_input'
           type='text' 
-          value={selectedState} 
-          placeholder='State' 
+          value={selectedState}  
           maxLength='2'
           onChange={this.handleChange} 
           />
