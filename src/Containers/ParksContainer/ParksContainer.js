@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 export const ParksContainer = ({ parks, selectedState }) => {
 	const mappedParks = parks.map(park => {
-		return <ParkCard {...park} />
+		return <ParkCard {...park} page={false}/>
 	})
 	return (
 		<section className='parks_container'>
