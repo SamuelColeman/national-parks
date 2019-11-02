@@ -7,11 +7,15 @@ export const InfoContainer = ({ parkInfo }) => {
 	const mappedInfo = parkInfo.map(info => {
 		return <InfoCard info={info}/>
 	})
-	return (
-		<section>
-			<div>{mappedInfo}</div>
-		</section>
-	)
+	if (mappedInfo.length > 1) {
+		return (
+			<section>
+				<div>{mappedInfo}</div>
+			</section>
+		)
+	} else {
+		return <h1>No Information Available</h1>
+	}
 }
 
 export const mapStateToProps = (state) => ({
