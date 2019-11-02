@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import './App.css';
 import { fetchParkInfo } from '../../apiCalls';
-import { hasError, getVisitorCenters, getEvents } from '../../actions';
+import { hasError, getInfo } from '../../actions';
 import { Route, Link } from 'react-router-dom';
 import ParksContainer from '../ParksContainer/ParksContainer';
 import Form from '../Form/Form';
@@ -12,21 +12,12 @@ import ParkCard from '../ParkCard/ParkCard';
 export class App extends Component {
 
   displayParkInfo = async (code, e) => {
-    const { hasError, getVisitorCenters, getEvents } = this.props;
-    if (e.target.name === 'VisitorCenters') {
-      try {
-        const centers = await fetchParkInfo(code, e.target.name);
-        getVisitorCenters(centers);
-      } catch (error) {
-        hasError(error.message);
-      }
-    } else if (e.target.name === 'Events') {
-      try {
-        const events = await fetchParkInfo(code, e.target.name);
-        getEvents(events);
-      } catch (error) {
-        hasError(error.message);
-      }
+    const { hasError, getInfo } = this.props;
+    try {
+      const centers = await fetchParkInfo(code, e.target.name);
+      getInfo(centers);
+    } catch (error) {
+      hasError(error.message);
     }
   }
 
@@ -54,8 +45,7 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = (dispatch) => (
   bindActionCreators({
     hasError,
-    getVisitorCenters,
-    getEvents
+    getInfo
   }, dispatch)
 )
 

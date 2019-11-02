@@ -13,13 +13,7 @@ export const selectState = (selectedState) => ({
 	selectedState
 })
 
-
-export const getVisitorCenters = (parkInfo) => ({
-	type: 'GET_VISITOR_CENTERS',
-	parkInfo
-})
-
-export const getEvents = (parkInfo) => ({
-	type: 'GET_EVENTS',
+export const getInfo = (parkInfo) => ({
+	type: 'GET_INFO',
 	parkInfo
 })
