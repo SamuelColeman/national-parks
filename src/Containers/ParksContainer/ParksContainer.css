@@ -1,0 +1,30 @@
+.parks_container {
+	display: grid;
+  background: #141527;
+  height: 100vh;
+  text-align: center;
+  width: 100%;
+  grid-template-areas: 
+		"header search search" 
+		"header article article"
+		"header article article";
+	grid-template-columns: 20% auto;
+	grid-template-rows: 10% auto;
+}
+
+.parks_container-header {
+	grid-area: header
+}
+
+.parks_container-form {
+	grid-area: search;
+}
+
+.parks_container-cards {
+	grid-area: article;
+	max-height: 100vh;
+	overflow: scroll;
+	display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
