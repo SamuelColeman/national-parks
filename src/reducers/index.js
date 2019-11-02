@@ -2,11 +2,11 @@ import { combineReducers } from 'redux';
 import { hasError } from './hasError';
 import { parks } from './parks';
 import { selectedState } from './selectedState';
-import { visitorCenters } from './visitorCenters';
+import { parkInfo } from './parkInfo';
 
 export const rootReducer = combineReducers({
 	hasError,
 	parks,
 	selectedState,
-	visitorCenters
+	parkInfo
 })

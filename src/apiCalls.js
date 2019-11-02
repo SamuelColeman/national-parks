@@ -4,8 +4,8 @@ export const fetchParks = async (state) => {
 	return data.data;
 }
 
-export const fetchVisitorCenters = async (code) => {
-	const response = await fetch(`https://developer.nps.gov/api/v1/visitorcenters?parkCode=${code}&api_key=jd03rGVMgfyl9RFBbSTUwXPh1IBNhbUf6Mt40p3E`);
+export const fetchParkInfo = async (code, name) => {
+	const response = await fetch(`https://developer.nps.gov/api/v1/${name}?parkCode=${code}&api_key=jd03rGVMgfyl9RFBbSTUwXPh1IBNhbUf6Mt40p3E`);
 	const data = await response.json();
 	return data.data;
 }

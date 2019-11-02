@@ -4,9 +4,9 @@ import './ParksContainer.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-export const ParksContainer = ({ parks, selectedState, isLoading, displayVisitorCenters }) => {
+export const ParksContainer = ({ parks, selectedState, isLoading, displayParkInfo }) => {
 	const mappedParks = parks.map(park => {
-		return <ParkCard {...park} page={false} displayVisitorCenters={displayVisitorCenters}/>
+		return <ParkCard {...park} page={false} displayParkInfo={displayParkInfo}/>
 	})
 	return (
 		<section className='parks_container'>
