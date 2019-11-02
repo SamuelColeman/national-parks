@@ -12,3 +12,8 @@ export const selectState = (selectedState) => ({
 	type: 'SELECT_STATE',
 	selectedState
 })
+
+export const getInfo = (parkInfo) => ({
+	type: 'GET_INFO',
+	parkInfo
+})
