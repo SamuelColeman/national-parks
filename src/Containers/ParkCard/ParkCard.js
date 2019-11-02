@@ -2,9 +2,8 @@ import React from 'react';
 import './ParkCard.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
 
-export const ParkCard = ({ name, designation, id, parks, fullName, description, weatherInfo, page, parkCode, displayParkInfo, parkInfo }) => {
+export const ParkCard = ({ name, designation, id, parks, fullName, description, weatherInfo, page, parkCode, displayParkInfo, parkInfo, infoName }) => {
 	if (page === false) {
 		return (
 			<Link to={`/parks/${id}`}>
@@ -23,10 +22,18 @@ export const ParkCard = ({ name, designation, id, parks, fullName, description, 
 				<h1 className='park_card_p'>Weather:</h1>
 				<h2 className='park_card_text'>{weatherInfo}</h2>
 				<section onClick={(e) => displayParkInfo(parkCode, e)}>
-					<button name='VisitorCenters'>Visitor Centers</button>
-					<button name='Events'>Events</button>
-					<button name='Alerts'>Alerts</button>
-					<button name='Campgrounds'>Campgrounds</button>
+					<Link to={`/parks/${id}/VisitorCenters`}>
+						<button name='VisitorCenters'>Visitor Centers</button>
+					</Link>
+					<Link to={`/parks/${id}/Events`}>
+						<button name='Events'>Events</button>
+					</Link>
+					<Link to={`/parks/${id}/Alerts`}>
+						<button name='Alerts'>Alerts</button>
+					</Link>
+					<Link to={`/parks/${id}/Campgrounds`}>
+						<button name='Campgrounds'>Campgrounds</button>
+					</Link>
 				</section>
 			</section>
 		)
@@ -35,7 +42,8 @@ export const ParkCard = ({ name, designation, id, parks, fullName, description, 
 
 export const mapStateToProps = (state) => ({
   parks: state.parks,
-  parkInfo: state.parkInfo
+  parkInfo: state.parkInfo,
+  infoName: state.infoName
 })
 
 export default connect(mapStateToProps)(ParkCard);

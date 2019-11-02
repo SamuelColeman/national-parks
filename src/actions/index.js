@@ -17,3 +17,8 @@ export const getInfo = (parkInfo) => ({
 	type: 'GET_INFO',
 	parkInfo
 })
+
+export const getInfoName = (infoName) => ({
+	type: 'GET_INFO_NAME',
+	infoName
+})

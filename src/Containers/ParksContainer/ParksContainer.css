@@ -13,7 +13,9 @@
 }
 
 .parks_container-header {
-	grid-area: header
+	grid-area: header;
+	font-size: 5vh;
+  color: white;
 }
 
 .parks_container-form {
