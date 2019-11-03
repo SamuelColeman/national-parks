@@ -2,11 +2,13 @@ import React from 'react';
 import './ParkCard.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getParkId } from '../../actions';
+import { bindActionCreators } from 'redux';
 
-export const ParkCard = ({ name, designation, id, parks, fullName, description, weatherInfo, page, parkCode, displayParkInfo, parkInfo, infoName }) => {
+export const ParkCard = ({ name, designation, id, parks, fullName, description, weatherInfo, page, parkCode, displayParkInfo, parkInfo, infoName, getParkId, parkId }) => {
 	if (page === false) {
 		return (
-			<Link to={`/parks/${id}`}>
+			<Link onClick={() => getParkId(id)} to={`/parks/${id}`}>
 				<section className='park_card'>
 					<h2 className='park_card_t'>{name}</h2>
 					<h3 className='park_card_d'>{designation}</h3>
@@ -35,6 +37,9 @@ export const ParkCard = ({ name, designation, id, parks, fullName, description, 
 						<button name='Campgrounds'>Campgrounds</button>
 					</Link>
 				</section>
+				<Link to='/parks'>
+					<button>Back</button>
+				</Link>
 			</section>
 		)
 	}
@@ -43,7 +48,14 @@ export const ParkCard = ({ name, designation, id, parks, fullName, description, 
 export const mapStateToProps = (state) => ({
   parks: state.parks,
   parkInfo: state.parkInfo,
-  infoName: state.infoName
+  infoName: state.infoName,
+  parkId: state.parkId
 })
 
-export default connect(mapStateToProps)(ParkCard);
+export const mapDispatchToProps = (dispatch) => (
+  bindActionCreators({
+  	getParkId
+  }, dispatch)
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(ParkCard);
