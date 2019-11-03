@@ -9,3 +9,10 @@
 .park_card_p {
 	font-size: 5vh;
 }
+
+.park_card {
+  border: 1px solid white;
+  margin: 5%;
+  width: 38vh;
+  height: 20vh;
+}

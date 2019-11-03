@@ -10,10 +10,12 @@ export const ParksContainer = ({ parks, selectedState, isLoading, displayParkInf
 	})
 	return (
 		<section className='parks_container'>
-			<h1>National Parks in {selectedState}</h1>
-			<input type='text' placeholder='Search' />
-			<button>Search</button>
-			<div>{mappedParks}</div>
+			<h1 className='parks_container-header'>National Parks: {selectedState}</h1>
+			<form className='parks_container-form'>
+				<input type='text' placeholder='Search' />
+				<button>Search</button>
+			</form>
+			<div className='parks_container-cards'>{mappedParks}</div>
 		</section>
 	)
 }
