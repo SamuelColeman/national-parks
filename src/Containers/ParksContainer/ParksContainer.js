@@ -4,7 +4,7 @@ import './ParksContainer.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-export const ParksContainer = ({ parks, selectedState, isLoading, displayParkInfo, handleSearch, errorMsg, loading }) => {
+export const ParksContainer = ({ parks, selectedState, isLoading, displayParkInfo, handleSearch, errorMsg, loading, submitState }) => {
 	const mappedParks = parks.map(park => {
 		return <ParkCard {...park} page={false} displayParkInfo={displayParkInfo}/>
 	})
@@ -18,7 +18,7 @@ export const ParksContainer = ({ parks, selectedState, isLoading, displayParkInf
 			</section>
 			<form className='parks_container-form'>
 				<input onChange={(e) => handleSearch(e)} type='text' placeholder='Search' />
-				<button>Search</button>
+				<button type='button' onClick={() => submitState(selectedState)}>All</button>
 			</form>
 			<section className='parks_container-cards'>
 				{loading && <h1>Loading</h1>}
