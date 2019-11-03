@@ -26,9 +26,11 @@ export class Form extends Component {
   }
 
   submitState = async (state) => {
-    const { hasError, getParks } = this.props;
+    const { hasError, getParks, isLoading } = this.props;
     try {
+      isLoading(true);
       const parks = await fetchParks(state);
+      isLoading(false);
       if (parks.length > 0) {
         getParks(parks);
         hasError('');
@@ -73,7 +75,8 @@ export const mapDispatchToProps = (dispatch) => (
   bindActionCreators({
     hasError,
     getParks,
-    selectState
+    selectState,
+    isLoading
   }, dispatch)
 )
 
