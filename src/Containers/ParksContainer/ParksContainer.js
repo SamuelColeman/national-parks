@@ -3,7 +3,7 @@ import ParkCard from '../ParkCard/ParkCard';
 import './ParksContainer.css';
 import { connect } from 'react-redux';
 
-export const ParksContainer = ({ parks, selectedState, isLoading, displayParkInfo, handleSearch }) => {
+export const ParksContainer = ({ parks, selectedState, isLoading, displayParkInfo, handleSearch, errorMsg }) => {
 	const mappedParks = parks.map(park => {
 		return <ParkCard {...park} page={false} displayParkInfo={displayParkInfo}/>
 	})
@@ -14,14 +14,18 @@ export const ParksContainer = ({ parks, selectedState, isLoading, displayParkInf
 				<input onChange={(e) => handleSearch(e)} type='text' placeholder='Search' />
 				<button>Search</button>
 			</form>
-			<div className='parks_container-cards'>{mappedParks}</div>
+			<section className='parks_container-cards'>
+			<h1>{errorMsg}</h1>
+			<div>{mappedParks}</div>
+			</section>
 		</section>
 	)
 }
 
 export const mapStateToProps = (state) => ({
   parks: state.parks,
-  selectedState: state.selectedState
+  selectedState: state.selectedState,
+  errorMsg: state.errorMsg
 })
 
 export default connect(mapStateToProps)(ParksContainer);
