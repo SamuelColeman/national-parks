@@ -10,21 +10,25 @@ export class Form extends Component {
 
   handleChange = (e) => {
     const { selectState } = this.props;
-    selectState(e.target.value);
+    selectState(e.target.value.toUpperCase());
   }
 
   submitState = async (state) => {
     const { hasError, getParks } = this.props;
-    try {
-      const parks = await fetchParks(state);
-      getParks(parks);
-    } catch (error) {
-      hasError(error.message);
+    if (state.length === 2) {
+      try {
+        const parks = await fetchParks(state);
+        getParks(parks);
+      } catch (error) {
+        hasError(error.message);
+      }
+    } else {
+      hasError('Invalid State')
     }
   }
 
   render() {
-    const { selectedState } = this.props;
+    const { selectedState, errorMsg } = this.props;
     return (
       <section className='form'>
         <h1 className='form_title'>National Parks Directory</h1>
@@ -36,6 +40,7 @@ export class Form extends Component {
           maxLength='2'
           onChange={this.handleChange} 
           />
+          <h2>{errorMsg}</h2>
         <Link to='/parks'>
           <button onClick={() => this.submitState(selectedState)}>Submit</button>
         </Link>
@@ -46,7 +51,8 @@ export class Form extends Component {
 
 export const mapStateToProps = (state) => ({
   parks: state.parks,
-  selectedState: state.selectedState
+  selectedState: state.selectedState,
+  errorMsg: state.errorMsg
 });
 
 export const mapDispatchToProps = (dispatch) => (

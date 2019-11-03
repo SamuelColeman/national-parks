@@ -12,13 +12,13 @@
 
 .park_card {
   border: 1px solid white;
-  margin: 5%;
+  margin: 5vh;
   width: 38vh;
   height: 20vh;
 }
 
-h2,
-h3 {
+.park_card_t,
+.park_card_d {
 	text-decoration: none;
 	color: white;
 }

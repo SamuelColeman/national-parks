@@ -1,6 +1,6 @@
 .parks_container {
 	display: grid;
-  background: #003300;
+  background: #D3D3D3;
   height: 100vh;
   text-align: center;
   width: 100%;
@@ -16,13 +16,14 @@
 	grid-area: header;
 	font-size: 5vh;
   color: white;
-  background-color: #331a00;
+  background-color: black;
   height: 100vh;
   margin: 0px;
 }
 
 .parks_container-form {
 	grid-area: search;
+	background: #003300;
 }
 
 .parks_container-cards {

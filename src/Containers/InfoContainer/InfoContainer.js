@@ -3,14 +3,16 @@ import InfoCard from '../InfoCard/InfoCard';
 import './InfoContainer.css';
 import { connect } from 'react-redux';
 
-export const InfoContainer = ({ parkInfo }) => {
+export const InfoContainer = ({ parkInfo, infoName }) => {
 	const mappedInfo = parkInfo.map(info => {
 		return <InfoCard info={info}/>
 	})
 	if (mappedInfo.length > 1) {
 		return (
 			<section>
+			<h1>{infoName}</h1>
 				<div>{mappedInfo}</div>
+			}
 			</section>
 		)
 	} else {
@@ -19,7 +21,8 @@ export const InfoContainer = ({ parkInfo }) => {
 }
 
 export const mapStateToProps = (state) => ({
-  parkInfo: state.parkInfo
+  parkInfo: state.parkInfo,
+  infoName: state.infoName
 })
 
 export default connect(mapStateToProps)(InfoContainer);
