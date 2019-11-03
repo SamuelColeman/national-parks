@@ -5,6 +5,7 @@ import { selectedState } from './selectedState';
 import { parkInfo } from './parkInfo';
 import { infoName } from './infoName';
 import { parkId } from './parkId';
+import { loading } from './loading';
 
 export const rootReducer = combineReducers({
 	errorMsg,
@@ -12,5 +13,6 @@ export const rootReducer = combineReducers({
 	selectedState,
 	parkInfo,
 	infoName,
-	parkId
+	parkId,
+	loading
 })

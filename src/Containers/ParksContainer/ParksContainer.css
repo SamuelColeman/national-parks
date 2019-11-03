@@ -1,6 +1,6 @@
 .parks_container {
 	display: grid;
-  background: #D3D3D3;
+  background: #585F29;
   height: 100vh;
   text-align: center;
   width: 100%;
@@ -8,25 +8,25 @@
 		"header search search" 
 		"header article article"
 		"header article article";
-	grid-template-columns: 20% auto;
+	grid-template-columns: 25% auto;
 	grid-template-rows: 10% auto;
 }
 
 .parks_container-header {
 	grid-area: header;
-  background-color: black;
+  background-color: #3C321F;
   height: 100vh;
   margin: 0px;
 }
 
 .parks_container-header-title {
 	font-size: 5vh;
-  color: white;
+  color: #585F29;
 }
 
 .parks_container-form {
 	grid-area: search;
-	background: #003300;
+	background: #AD9A7A;
 }
 
 .parks_container-cards {

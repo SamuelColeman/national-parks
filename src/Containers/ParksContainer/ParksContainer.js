@@ -4,7 +4,7 @@ import './ParksContainer.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-export const ParksContainer = ({ parks, selectedState, isLoading, displayParkInfo, handleSearch, errorMsg }) => {
+export const ParksContainer = ({ parks, selectedState, isLoading, displayParkInfo, handleSearch, errorMsg, loading }) => {
 	const mappedParks = parks.map(park => {
 		return <ParkCard {...park} page={false} displayParkInfo={displayParkInfo}/>
 	})
@@ -21,8 +21,9 @@ export const ParksContainer = ({ parks, selectedState, isLoading, displayParkInf
 				<button>Search</button>
 			</form>
 			<section className='parks_container-cards'>
-				<h1>{errorMsg}</h1>
-				<div>{mappedParks}</div>
+				{loading && <h1>Loading</h1>}
+				{errorMsg && <h1>{errorMsg}</h1>}
+				<div className='parks_container-cards'>{mappedParks}</div>
 			</section>
 		</section>
 	)
@@ -31,7 +32,8 @@ export const ParksContainer = ({ parks, selectedState, isLoading, displayParkInf
 export const mapStateToProps = (state) => ({
   parks: state.parks,
   selectedState: state.selectedState,
-  errorMsg: state.errorMsg
+  errorMsg: state.errorMsg,
+  loading: state.loading
 })
 
 export default connect(mapStateToProps)(ParksContainer);

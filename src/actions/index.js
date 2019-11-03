@@ -27,3 +27,8 @@ export const getParkId = (parkId) => ({
 	type: 'GET_PARK_ID',
 	parkId
 })
+
+export const isLoading = (loading) => ({
+	type: 'IS_LOADING',
+	loading
+})
