@@ -7,28 +7,42 @@ import { hasError, getParks, selectState, isLoading } from '../../actions';
 import { Link } from 'react-router-dom';
 
 export class Form extends Component {
+  constructor() {
+    super();
+    this.state = {
+      ConditonalLink: 'div'
+    }
+  }
 
   handleChange = (e) => {
-    const { selectState } = this.props;
+    const { selectState, hasError } = this.props;
     selectState(e.target.value.toUpperCase());
+    if (e.target.value.length === 2) {
+      this.setState({ ConditonalLink: Link });
+      hasError('');
+    } else {
+      hasError('Invalid State');
+    }
   }
 
   submitState = async (state) => {
     const { hasError, getParks } = this.props;
-    if (state.length === 2) {
-      try {
-        const parks = await fetchParks(state);
+    try {
+      const parks = await fetchParks(state);
+      if (parks.length > 0) {
         getParks(parks);
-      } catch (error) {
-        hasError(error.message);
+        hasError('');
+      } else {
+        hasError('Invalid State');
       }
-    } else {
-      hasError('Invalid State')
+    } catch (error) {
+      hasError(error.message);
     }
   }
 
   render() {
     const { selectedState, errorMsg } = this.props;
+    const { ConditonalLink } = this.state;
     return (
       <section className='form'>
         <h1 className='form_title'>National Parks Directory</h1>
@@ -41,9 +55,9 @@ export class Form extends Component {
           onChange={this.handleChange} 
           />
           <h2>{errorMsg}</h2>
-        <Link to='/parks'>
+        <ConditonalLink to='/parks'>
           <button onClick={() => this.submitState(selectedState)}>Submit</button>
-        </Link>
+        </ConditonalLink>
       </section>
     )
   }
