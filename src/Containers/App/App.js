@@ -20,6 +20,7 @@ export class App extends Component {
       isLoading(false);
       if (parks.length > 0) {
         getParks(parks);
+        console.log(parks)
         hasError('');
       } else {
         hasError('Invalid State');
