@@ -8,8 +8,8 @@ export const ParkCard = ({ name, designation, id, parks, fullName, description, 
 		return (
 			<Link to={`/parks/${id}`}>
 				<section className='park_card'>
-					<h2>{name}</h2>
-					<h3>{designation}</h3>
+					<h2 className='park_card_t'>{name}</h2>
+					<h3 className='park_card_d'>{designation}</h3>
 				</section>
 			</Link>
 		)

@@ -7,45 +7,33 @@ export const InfoCard = ({ infoName, info }) => {
 		console.log(info)
 		return (
 			<section>
-				<h1>{infoName}</h1>
-				<section>
-					<h2>{info.name}</h2>
-					<h3>{info.description}</h3>
-					<p>{info.url}</p>
-				</section>
+				<h2>{info.name}</h2>
+				<h3>{info.description}</h3>
+				<p>{info.url}</p>
 			</section>
 		)
 	} else if (infoName === 'Events') {
 		console.log(info)
 		return (
 			<section>
-				<h1>{infoName}</h1>
-					<section>
-					<h2>{info.title}</h2>
-					<h3>{info.description}</h3>
-				</section>
+				<h2>{info.title}</h2>
+				<h3>{info.description}</h3>
 			</section>
 		)
 	} else if (infoName === 'Alerts') {
 		console.log(info)
 		return (
 			<section>
-				<h1>{infoName}</h1>
-				<section>
-					<h2>{info.title}</h2>
-					<h3>{info.description}</h3>
-				</section>
+				<h2>{info.title}</h2>
+				<h3>{info.description}</h3>
 			</section>
 		)
 	} else if (infoName === 'Campgrounds') {
 		console.log(info)
 		return (
 			<section>
-				<h1>{infoName}</h1>
-				<section>
-					<h2>{info.name}</h2>
-					<h3>{info.description}</h3>
-				</section>
+				<h2>{info.name}</h2>
+				<h3>{info.description}</h3>
 			</section>
 		)
 	}

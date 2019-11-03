@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import { hasError } from './hasError';
+import { errorMsg } from './errorMsg';
 import { parks } from './parks';
 import { selectedState } from './selectedState';
 import { parkInfo } from './parkInfo';
 import { infoName } from './infoName';
 
 export const rootReducer = combineReducers({
-	hasError,
+	errorMsg,
 	parks,
 	selectedState,
 	parkInfo,
