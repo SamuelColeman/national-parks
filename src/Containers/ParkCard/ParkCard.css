@@ -16,3 +16,9 @@
   width: 38vh;
   height: 20vh;
 }
+
+h2,
+h3 {
+	text-decoration: none;
+	color: white;
+}
