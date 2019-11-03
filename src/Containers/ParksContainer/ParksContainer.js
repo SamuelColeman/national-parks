@@ -1,7 +1,6 @@
 import React from 'react';
 import ParkCard from '../ParkCard/ParkCard';
 import './ParksContainer.css';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 export const ParksContainer = ({ parks, selectedState, isLoading, displayParkInfo }) => {
