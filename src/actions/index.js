@@ -22,3 +22,8 @@ export const getInfoName = (infoName) => ({
 	type: 'GET_INFO_NAME',
 	infoName
 })
+
+export const getParkId = (parkId) => ({
+	type: 'GET_PARK_ID',
+	parkId
+})

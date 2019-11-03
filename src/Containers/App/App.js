@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './App.css';
 import { fetchParkInfo } from '../../apiCalls';
 import { hasError, getInfo, getInfoName, getParks } from '../../actions';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import ParksContainer from '../ParksContainer/ParksContainer';
 import Form from '../Form/Form';
 import ParkCard from '../ParkCard/ParkCard';
@@ -45,13 +45,8 @@ export class App extends Component {
             return (
               <ParkCard {...matchPark} page={true} displayParkInfo={this.displayParkInfo}/>
           )}} />
-        <Route exact path={`/parks/:id/${infoName}`} render={({ match }) => {
-            let { parks } = this.props;
-            const { id } = match.params;
-            const matchPark = parks.find(park => park.id === id);
-            return (
-              <InfoContainer />
-          )}} />
+        <Route exact path={`/parks/:id/${infoName}`} render={() => 
+          <InfoContainer />} />
       </div>
     );
   }
