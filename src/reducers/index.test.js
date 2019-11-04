@@ -51,5 +51,4 @@ describe("rootReducer", () => {
   it('should contain loading logic', () => {
     expect(store.getState().loading).toEqual(loading(undefined, { type: null }));
   });
-
 });

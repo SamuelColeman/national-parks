@@ -13,15 +13,15 @@ export const ParksContainer = ({ parks, selectedState, displayParkInfo, handleSe
 			<section className='parks_container-header'>
 				<h1 className='parks_container-header-title'>National Parks: {selectedState}</h1>
 				<Link to='/'>
-					<button>Select State</button>
+					<button className='parks_container-header-button'>Select State</button>
 				</Link>
 			</section>
 			<form className='parks_container-form'>
-				<input onChange={(e) => handleSearch(e)} type='text' placeholder='Search' />
-				<button type='button' onClick={() => submitState(selectedState)}>All</button>
+			<button className='parks_container-search-btn' type='button' onClick={() => submitState(selectedState)}>All</button>
+				<input className='parks_container-search' onChange={(e) => handleSearch(e)} type='text' placeholder='Search'/>
 			</form>
 			<section className='parks_container-cards'>
-				{loading && <h1>Loading</h1>}
+				{loading && <h1 className='parks_container-loading'>Loading...</h1>}
 				{errorMsg && <h1>{errorMsg}</h1>}
 				<div className='parks_container-cards'>{mappedParks}</div>
 			</section>

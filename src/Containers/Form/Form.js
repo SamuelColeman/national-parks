@@ -29,19 +29,19 @@ export class Form extends Component {
     const { ConditionalLink } = this.state;
     return (
       <section className='form'>
-        <h1 className='form_title'>National Parks Directory</h1>
-        <h2 className='form_text'>Select State:</h2>
-        <input 
-          className='form_input'
-          type='text' 
-          value={selectedState} 
-          maxLength='2'
-          onChange={this.handleChange} 
-          />
-          <h2>{errorMsg}</h2>
-        <ConditionalLink to='/parks'>
-          <button onClick={() => submitState(selectedState)}>Submit</button>
-        </ConditionalLink>
+          <h1 className='form_title'>National Parks Directory</h1>
+          <h2 className='form_text'>Select State:</h2>
+          <input 
+            className='form_input'
+            type='text' 
+            value={selectedState} 
+            maxLength='2'
+            onChange={this.handleChange} 
+            />
+            <h2 className='form_error'>{errorMsg}</h2>
+          <ConditionalLink to='/parks'>
+            <button className='form_button' onClick={() => submitState(selectedState)}>Submit</button>
+          </ConditionalLink>
       </section>
     )
   }

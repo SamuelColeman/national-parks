@@ -11,14 +11,27 @@
 }
 
 .park_card {
-  border: 1px solid white;
-  margin: 5vh;
-  width: 38vh;
-  height: 20vh;
+	text-decoration: none;
+	border: 3px solid #3C321F;
+  margin: 3vh;
+  width: 50vh;
+  height: 25vh;
+  background: #AD9A7A;
+  border-radius: 5px;
 }
 
-.park_card_t,
+.park_card_t {
+	text-decoration: none;
+	color: #3C321F;
+	font-size: 5vh;
+  margin-bottom: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 .park_card_d {
 	text-decoration: none;
-	color: white;
+	text-underline-position: none;
+	color: #3C321F;
+	font-size: 3vh;
 }

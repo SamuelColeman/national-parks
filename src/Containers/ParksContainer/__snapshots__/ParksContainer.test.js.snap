@@ -16,7 +16,9 @@ exports[`ParksContainer should match snapshot with correct data passing through 
     <Link
       to="/"
     >
-      <button>
+      <button
+        className="parks_container-header-button"
+      >
         Select State
       </button>
     </Link>
@@ -24,17 +26,19 @@ exports[`ParksContainer should match snapshot with correct data passing through 
   <form
     className="parks_container-form"
   >
-    <input
-      onChange={[Function]}
-      placeholder="Search"
-      type="text"
-    />
     <button
+      className="parks_container-search-btn"
       onClick={[Function]}
       type="button"
     >
       All
     </button>
+    <input
+      className="parks_container-search"
+      onChange={[Function]}
+      placeholder="Search"
+      type="text"
+    />
   </form>
   <section
     className="parks_container-cards"
@@ -82,7 +86,9 @@ exports[`ParksContainer should match snapshot with correct data passing through 
     <Link
       to="/"
     >
-      <button>
+      <button
+        className="parks_container-header-button"
+      >
         Select State
       </button>
     </Link>
@@ -90,17 +96,19 @@ exports[`ParksContainer should match snapshot with correct data passing through 
   <form
     className="parks_container-form"
   >
-    <input
-      onChange={[Function]}
-      placeholder="Search"
-      type="text"
-    />
     <button
+      className="parks_container-search-btn"
       onClick={[Function]}
       type="button"
     >
       All
     </button>
+    <input
+      className="parks_container-search"
+      onChange={[Function]}
+      placeholder="Search"
+      type="text"
+    />
   </form>
   <section
     className="parks_container-cards"
