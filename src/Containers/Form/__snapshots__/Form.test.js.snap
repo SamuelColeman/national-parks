@@ -20,11 +20,14 @@ exports[`Form should match snapshot with correct data passing through 1`] = `
     onChange={[Function]}
     type="text"
   />
-  <h2 />
+  <h2
+    className="form_error"
+  />
   <div
     to="/parks"
   >
     <button
+      className="form_button"
       onClick={[Function]}
     >
       Submit

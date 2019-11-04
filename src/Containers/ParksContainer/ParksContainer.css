@@ -14,19 +14,19 @@
 
 .parks_container-header {
 	grid-area: header;
-  background-color: #3C321F;
+  background-color: #AD9A7A;
   height: 100vh;
   margin: 0px;
 }
 
 .parks_container-header-title {
-	font-size: 5vh;
-  color: #585F29;
+	font-size: 7vh;
+  color: #3C321F;
 }
 
 .parks_container-form {
 	grid-area: search;
-	background: #AD9A7A;
+	background: #3C321F;
 }
 
 .parks_container-cards {
@@ -36,4 +36,47 @@
 	display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.parks_container-search {
+	width: 35vh;
+  height: 6vh;
+  margin-top: 1%;
+  background: transparent;
+  font-size: 3vh;
+  color: #AD9A7A;
+  border-radius: 5px;
+  border: 2px solid #AD9A7A;
+}
+
+.parks_container-header-button {
+	width: 75%;
+  height: 5vh;
+  border-radius: 5px;
+  font-size: 3vh;
+  background: #3C321F;
+  border: 1px solid #3C321F;
+  color: #AD9A7A;
+}
+
+.parks_container-header-button:hover,
+.parks_container-search-btn:hover {
+	background: #585F29;
+	border: 1px solid #585F29;
+}
+
+.parks_container-search-btn {
+	width: 6vh;
+  height: 6vh;
+  margin: 2vh;
+  border-radius: 5px;
+  font-size: 3vh;
+  background: #AD9A7A;
+  border: 1px solid #AD9A7A;
+  color: #3C321F;
+}
+
+.parks_container-loading {
+	font-size: 7vh;
+  color: #AD9A7A;
 }

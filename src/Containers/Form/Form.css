@@ -16,13 +16,34 @@
 
 .form_text {
 	font-size: 5vh;
-	color: tan;
+  color: tan;
+  margin: 0;
+  padding: 3% 0;
 }
 
 .form_input {
-	background: transparent;
+	border: 5px solid tan;
+	background: rgba(0, 0, 0, 0.5);
   width: 7vh;
   height: 6vh;
   font-size: 35px;
   color: tan;
+}
+
+.form_button {
+	width: 9vh;
+  height: 3vh;
+  font-size: 2vh;
+  background: tan;
+  border: 1px solid tan;
+}
+
+.form_button:hover {
+	background: #585F29;
+	border: 1px solid #585F29;
+}
+
+.form_error {
+	color: red;
+  font-size: 5vh;
 }
