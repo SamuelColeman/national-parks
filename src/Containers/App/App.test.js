@@ -1,9 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { shallow } from 'enzyme';
+import { App, mapStateToProps } from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+import { fetchParks, fetchParkInfo } from '../../apiCalls';
+
+
+jest.mock('../../apiCalls');
+
+describe('App', () => {
+	
+	let wrapper;
+
+	beforeEach(() => {
+    wrapper = shallow(<App />)
+ 	})
+
+  it('should match snapshot with correct data passing through', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
 });

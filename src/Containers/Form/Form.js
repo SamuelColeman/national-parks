@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import './Form.css';
-import { fetchParks } from '../../apiCalls';
 import { hasError, getParks, selectState, isLoading } from '../../actions';
 import { Link } from 'react-router-dom';
 
 export class Form extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       ConditonalLink: 'div'
     }
@@ -25,25 +24,8 @@ export class Form extends Component {
     }
   }
 
-  submitState = async (state) => {
-    const { hasError, getParks, isLoading } = this.props;
-    try {
-      isLoading(true);
-      const parks = await fetchParks(state);
-      isLoading(false);
-      if (parks.length > 0) {
-        getParks(parks);
-        hasError('');
-      } else {
-        hasError('Invalid State');
-      }
-    } catch (error) {
-      hasError(error.message);
-    }
-  }
-
   render() {
-    const { selectedState, errorMsg } = this.props;
+    const { selectedState, errorMsg, submitState } = this.props;
     const { ConditonalLink } = this.state;
     return (
       <section className='form'>
@@ -58,7 +40,7 @@ export class Form extends Component {
           />
           <h2>{errorMsg}</h2>
         <ConditonalLink to='/parks'>
-          <button onClick={() => this.submitState(selectedState)}>Submit</button>
+          <button onClick={() => submitState(selectedState)}>Submit</button>
         </ConditonalLink>
       </section>
     )

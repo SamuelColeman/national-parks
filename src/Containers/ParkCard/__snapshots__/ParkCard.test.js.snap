@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ParkCard should match snapshot with correct data passing through 1`] = `
+<Link
+  onClick={[Function]}
+  to="/parks/2"
+>
+  <section
+    className="park_card"
+  >
+    <h2
+      className="park_card_t"
+    >
+      Historic Park
+    </h2>
+    <h3
+      className="park_card_d"
+    >
+      National Historic Site
+    </h3>
+  </section>
+</Link>
+`;
