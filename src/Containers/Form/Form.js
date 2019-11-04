@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import './Form.css';
-import { hasError, getParks, selectState, isLoading } from '../../actions';
+import { hasError, selectState } from '../../actions';
 import { Link } from 'react-router-dom';
 
 export class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ConditonalLink: 'div'
+      ConditionalLink: 'div'
     }
   }
 
@@ -17,7 +17,7 @@ export class Form extends Component {
     const { selectState, hasError } = this.props;
     selectState(e.target.value.toUpperCase());
     if (e.target.value.length === 2) {
-      this.setState({ ConditonalLink: Link });
+      this.setState({ ConditionalLink: Link });
       hasError('');
     } else {
       hasError('Invalid State');
@@ -26,7 +26,7 @@ export class Form extends Component {
 
   render() {
     const { selectedState, errorMsg, submitState } = this.props;
-    const { ConditonalLink } = this.state;
+    const { ConditionalLink } = this.state;
     return (
       <section className='form'>
         <h1 className='form_title'>National Parks Directory</h1>
@@ -39,9 +39,9 @@ export class Form extends Component {
           onChange={this.handleChange} 
           />
           <h2>{errorMsg}</h2>
-        <ConditonalLink to='/parks'>
+        <ConditionalLink to='/parks'>
           <button onClick={() => submitState(selectedState)}>Submit</button>
-        </ConditonalLink>
+        </ConditionalLink>
       </section>
     )
   }
@@ -56,9 +56,7 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = (dispatch) => (
   bindActionCreators({
     hasError,
-    getParks,
-    selectState,
-    isLoading
+    selectState
   }, dispatch)
 )
 

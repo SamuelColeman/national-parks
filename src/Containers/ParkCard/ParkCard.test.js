@@ -34,12 +34,13 @@ describe('ParkCard', () => {
 	let mockParks = [mockPark]
 	let mockPage = false;
 	let mockDisplayParkInfo = jest.fn();
+	let mockGetParkId = jest.fn();
 
 	beforeEach(() => {
     wrapper = shallow(<ParkCard
     	{...mockPark} 
     	page={mockPage}
-    	getParkId={getParkId}
+    	getParkId={mockGetParkId}
     	displayParkInfo={mockDisplayParkInfo}
     	/>)
  	})
@@ -110,13 +111,9 @@ describe('ParkCard', () => {
     mockPage = false;
    });
 
-	// it('calls dispatch with getParkId action when  is called', () => {
- //      const mockDispatch = jest.fn();
- //      const actionToDispatch = getParkId(mockPark.id);
- //      const mappedProps = mapDispatchToProps(mockDispatch);
- //      wrapper.find('Link').simulate('click');
- //      // mappedProps.handleSubmit('Learn Redux!', 1);
+	it('calls dispatch with getParkId action when Link is clicked', () => {
+      wrapper.find('Link').simulate('click');
 
- //      expect(getParkId).toHaveBeenCalledWith(mockPark.id);
- //    });
+      expect(mockGetParkId).toHaveBeenCalledWith(mockPark.id);
+    });
 });
