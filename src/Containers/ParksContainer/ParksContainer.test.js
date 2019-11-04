@@ -42,4 +42,66 @@ describe('ParksContainer', () => {
   it('should match snapshot with correct data passing through', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should call submitState when all button is clicked', () => {
+    wrapper.find('button').at(1).simulate('click');
+
+    expect(mockSubmitState).toHaveBeenCalledWith(mockSelectedState);
+    });
+
+  it('should call handleSearch when search input field is changed', () => {
+  	const mockEvent = {target: {value: 'TN'}};
+
+    wrapper.find('input').simulate('change', mockEvent);
+
+    expect(mockHandleSearch).toHaveBeenCalledWith(mockEvent);
+    });
+
+  it('map state to props gives the parks array in state', () => {
+		const mockState = { parks: mockParks};
+
+		const expected = {
+			parks: mockState.parks
+		};
+
+		const mappedState = mapStateToProps(mockState);
+
+		expect(mappedState).toEqual(expected);
+	});
+
+	it('map state to props gives the selected state in state', () => {
+		const mockState = { selectedState: mockSelectedState};
+
+		const expected = {
+			selectedState: mockState.selectedState
+		};
+
+		const mappedState = mapStateToProps(mockState);
+
+		expect(mappedState).toEqual(expected);
+	});
+
+	it('map state to props gives the error message in state', () => {
+		const mockState = { errorMsg: mockErrorMsg};
+
+		const expected = {
+			errorMsg: mockState.errorMsg
+		};
+
+		const mappedState = mapStateToProps(mockState);
+
+		expect(mappedState).toEqual(expected);
+	});
+
+	it('map state to props gives the loading in state', () => {
+		const mockState = { loading: mockLoading};
+
+		const expected = {
+			loading: mockState.loading
+		};
+
+		const mappedState = mapStateToProps(mockState);
+
+		expect(mappedState).toEqual(expected);
+	});
 });
