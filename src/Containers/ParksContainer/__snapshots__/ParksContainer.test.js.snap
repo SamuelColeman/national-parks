@@ -65,3 +65,69 @@ exports[`ParksContainer should match snapshot with correct data passing through 
   </section>
 </section>
 `;
+
+exports[`ParksContainer should match snapshot with correct data passing through 2`] = `
+<section
+  className="parks_container"
+>
+  <section
+    className="parks_container-header"
+  >
+    <h1
+      className="parks_container-header-title"
+    >
+      National Parks: 
+      ZN
+    </h1>
+    <Link
+      to="/"
+    >
+      <button>
+        Select State
+      </button>
+    </Link>
+  </section>
+  <form
+    className="parks_container-form"
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Search"
+      type="text"
+    />
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      All
+    </button>
+  </form>
+  <section
+    className="parks_container-cards"
+  >
+    <h1>
+      Invalid State
+    </h1>
+    <div
+      className="parks_container-cards"
+    >
+      <Connect(ParkCard)
+        description="Historic Site"
+        designation="National Historic Site"
+        directionsInfo="Drive Car"
+        directionsUrl="http://www.directions.com"
+        displayParkInfo={[MockFunction]}
+        fullName="National Historic Site"
+        id="2"
+        latLong="lat:36, long:82"
+        name="Historic Park"
+        page={false}
+        parkCode="pant"
+        states="ZN"
+        url="https://www.example.com"
+        weatherInfo="Sunny"
+      />
+    </div>
+  </section>
+</section>
+`;

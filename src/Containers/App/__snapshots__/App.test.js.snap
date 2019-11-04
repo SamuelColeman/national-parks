@@ -21,7 +21,7 @@ exports[`App should match snapshot with correct data passing through 1`] = `
   />
   <Route
     exact={true}
-    path="/parks/:id/undefined"
+    path="/parks/:id/VisitorCenters"
     render={[Function]}
   />
 </div>
