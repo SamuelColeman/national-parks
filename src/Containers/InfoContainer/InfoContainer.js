@@ -10,12 +10,12 @@ export const InfoContainer = ({ parkInfo, infoName, parkId }) => {
 	})
 	if (mappedInfo.length > 0) {
 		return (
-			<section>
-				<h1>{infoName}</h1>
+			<section className='info_container'>
+				<h1 className='info_title'>{infoName}</h1>
 				<Link to={`/parks/${parkId}`}>
-					<button>Back</button>
+					<button className='info_btn'>Back</button>
 				</Link>
-				<div>{mappedInfo}</div>
+				<div className='info_main'>{mappedInfo}</div>
 			</section>
 			)
 	} else {
