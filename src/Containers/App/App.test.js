@@ -59,4 +59,28 @@ describe('App', () => {
   	expect(mockIsLoading).toHaveBeenCalledWith(true);
   	expect(fetchParks).toHaveBeenCalledWith(mockState);
   })
+
+  it('map state to props gives the parks array in state', () => {
+		const mockState = { parks: mockParks};
+
+		const expected = {
+			parks: mockState.parks
+		};
+
+		const mappedState = mapStateToProps(mockState);
+
+		expect(mappedState).toEqual(expected);
+	});
+
+	it('map state to props gives the info name in state', () => {
+		const mockState = { infoName: mockInfoName};
+
+		const expected = {
+			infoName: mockState.infoName
+		};
+
+		const mappedState = mapStateToProps(mockState);
+
+		expect(mappedState).toEqual(expected);
+	});
 });

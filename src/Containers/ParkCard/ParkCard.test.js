@@ -51,7 +51,6 @@ describe('ParkCard', () => {
   it('should match snapshot with correct data passing through', () => {
   	mockPage = true;
     expect(wrapper).toMatchSnapshot();
-    mockPage = false;
   });
 
   it('map state to props gives the parks array in state', () => {
@@ -101,6 +100,15 @@ describe('ParkCard', () => {
 
 		expect(mappedState).toEqual(expected);
 	});
+
+	it('should call displayParkInfo when section is clicked', () => {
+  	const mockEvent = {target: {name: mockInfoName}};
+
+    wrapper.find('section').at(1).simulate('click', mockEvent);
+
+    expect(mockDisplayParkInfo).toHaveBeenCalledWith(mockPark.parkCode, mockEvent);
+    mockPage = false;
+   });
 
 	// it('calls dispatch with getParkId action when  is called', () => {
  //      const mockDispatch = jest.fn();
