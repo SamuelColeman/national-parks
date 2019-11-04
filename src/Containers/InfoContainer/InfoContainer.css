@@ -1,0 +1,34 @@
+.info_title {
+	font-size: 8vh;
+	padding: 4vh;
+	color: #585F29;
+	background: #3C321F;
+	margin: 0;
+}
+
+.info_btn {
+	width: 12%;
+  height: 4vh;
+  margin: 2vh;
+  font-size: 3vh;
+  border-radius: 5px;
+  background: #3C321F;
+  color: #585F29;
+  border: 1px solid #3C321F;
+}
+
+.info_main {
+	background: #AD9A7A;
+}
+
+.info_btn:hover {
+	background: #585F29;
+  color: #AD9A7A;
+  border: 1px solid #585F29;
+}
+
+.info_container {
+	background: #AD9A7A;
+	max-height: 100vh;
+	overflow: scroll;
+}

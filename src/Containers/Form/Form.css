@@ -36,6 +36,7 @@
   font-size: 2vh;
   background: tan;
   border: 1px solid tan;
+  border-radius: 5px;
 }
 
 .form_button:hover {
