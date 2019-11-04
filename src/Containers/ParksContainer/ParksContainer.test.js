@@ -52,7 +52,7 @@ describe('ParksContainer', () => {
     wrapper.find('button').at(1).simulate('click');
 
     expect(mockSubmitState).toHaveBeenCalledWith(mockSelectedState);
-    });
+  });
 
   it('should call handleSearch when search input field is changed', () => {
   	const mockEvent = {target: {value: 'TN'}};
@@ -60,7 +60,7 @@ describe('ParksContainer', () => {
     wrapper.find('input').simulate('change', mockEvent);
 
     expect(mockHandleSearch).toHaveBeenCalledWith(mockEvent);
-    });
+  });
 
   it('map state to props gives the parks array in state', () => {
 		const mockState = { parks: mockParks};
