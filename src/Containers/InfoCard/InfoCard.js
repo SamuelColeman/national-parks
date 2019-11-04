@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 export const InfoCard = ({ infoName, info }) => {
 	if (infoName === 'VisitorCenters') {
-		console.log(info)
 		return (
 			<section>
 				<h2>{info.name}</h2>
@@ -13,7 +12,6 @@ export const InfoCard = ({ infoName, info }) => {
 			</section>
 		)
 	} else if (infoName === 'Events') {
-		console.log(info)
 		return (
 			<section>
 				<h2>{info.title}</h2>
@@ -21,7 +19,6 @@ export const InfoCard = ({ infoName, info }) => {
 			</section>
 		)
 	} else if (infoName === 'Alerts') {
-		console.log(info)
 		return (
 			<section>
 				<h2>{info.title}</h2>
@@ -29,7 +26,6 @@ export const InfoCard = ({ infoName, info }) => {
 			</section>
 		)
 	} else if (infoName === 'Campgrounds') {
-		console.log(info)
 		return (
 			<section>
 				<h2>{info.name}</h2>

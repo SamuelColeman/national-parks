@@ -17,10 +17,9 @@ export class App extends Component {
     try {
       isLoading(true);
       const parks = await fetchParks(state);
-      isLoading(false);
+        isLoading(false);
       if (parks.length > 0) {
         getParks(parks);
-        console.log(parks)
         hasError('');
       } else {
         hasError('Invalid State');

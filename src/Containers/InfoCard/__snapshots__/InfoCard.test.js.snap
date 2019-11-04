@@ -1,3 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InfoCard should match snapshot with correct data passing through 1`] = `""`;
+exports[`InfoCard should match snapshot with Alerts passing through 1`] = `
+<section>
+  <h2 />
+  <h3 />
+</section>
+`;
+
+exports[`InfoCard should match snapshot with Campgrounds passing through 1`] = `
+<section>
+  <h2 />
+  <h3 />
+</section>
+`;
+
+exports[`InfoCard should match snapshot with Events passing through 1`] = `
+<section>
+  <h2 />
+  <h3 />
+  <p />
+</section>
+`;
+
+exports[`InfoCard should match snapshot with VisitorCenters passing through 1`] = `
+<section>
+  <h2 />
+  <h3 />
+  <p />
+</section>
+`;
