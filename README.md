@@ -26,10 +26,10 @@ To open the app on your web server run ``` $ npm start ```
   
 ## Screenshots of National Parks
 
-![Screen Shot 1]()
+![Screen Shot 1](src/images/national_parks_1.png)
 
-![Screen Shot 2]()
+![Screen Shot 2](src/images/national_parks_2.png)
 
-![Screen Shot 3]()
+![Screen Shot 3](src/images/national_parks_3.png)
 
-![Screen Shot 4]()
+![Screen Shot 4](src/images/national_parks_4.png)
