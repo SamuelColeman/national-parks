@@ -1,13 +1,17 @@
 .park_card_text {
 	padding: 0 15vh;
+	color: #3C321F;
 }
 
 .park_card_title {
 	font-size: 8vh;
+	margin: 4vh;
+	color: #585F29;
 }
 
 .park_card_p {
 	font-size: 5vh;
+	color: #585F29;
 }
 
 .park_card {
@@ -34,4 +38,52 @@
 	text-underline-position: none;
 	color: #3C321F;
 	font-size: 3vh;
+}
+
+.park_section {
+	display: grid;
+  background: #AD9A7A;
+  height: 100vh;
+  text-align: center;
+  width: 100%;
+  grid-template-areas: 
+		"title title title" 
+		"form info info"
+		"form info info";
+	grid-template-columns: 25% auto;
+	grid-template-rows: 20% auto;
+}
+
+.park_card_info {
+	max-height: 100vh;
+	overflow: scroll;
+	grid-area: info;
+}
+
+.park_card_btns {
+	grid-area: form;
+	padding-top: 2vh;
+	background-color: #585F29;
+}
+
+.park_card_header {
+	grid-area: title;
+	background-color: #3C321F;
+}
+
+.info_name {
+	background: #3C321F;
+	border: 1px solid #3C321F;
+	width: 75%;
+  margin: 4%;
+  height: 5vh;
+  font-size: 3vh;
+  border-radius: 5px;
+  color: #AD9A7A;
+}
+
+.info_name:hover {
+	background: #AD9A7A;
+	border: 1px solid #AD9A7A;
+	color: #3C321F;
 }
