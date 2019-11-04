@@ -43,6 +43,11 @@ describe('ParksContainer', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should match snapshot with correct data passing through', () => {
+  	mockLoading = true;
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('should call submitState when all button is clicked', () => {
     wrapper.find('button').at(1).simulate('click');
 

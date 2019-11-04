@@ -39,6 +39,7 @@ describe('ParkCard', () => {
     wrapper = shallow(<ParkCard
     	{...mockPark} 
     	page={mockPage}
+    	getParkId={getParkId}
     	displayParkInfo={mockDisplayParkInfo}
     	/>)
  	})
@@ -50,6 +51,7 @@ describe('ParkCard', () => {
   it('should match snapshot with correct data passing through', () => {
   	mockPage = true;
     expect(wrapper).toMatchSnapshot();
+    mockPage = false;
   });
 
   it('map state to props gives the parks array in state', () => {
@@ -101,13 +103,12 @@ describe('ParkCard', () => {
 	});
 
 	// it('calls dispatch with getParkId action when  is called', () => {
-	// 		mockPage = false;
  //      const mockDispatch = jest.fn();
  //      const actionToDispatch = getParkId(mockPark.id);
  //      const mappedProps = mapDispatchToProps(mockDispatch);
- //      wrapper.find('Link').at(0).simulate('click');
+ //      wrapper.find('Link').simulate('click');
  //      // mappedProps.handleSubmit('Learn Redux!', 1);
 
- //      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+ //      expect(getParkId).toHaveBeenCalledWith(mockPark.id);
  //    });
 });
