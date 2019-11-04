@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoContainer should match snapshot with correct data passing through 1`] = `
+<section>
+  <h1>
+    VisitorCenters
+  </h1>
+  <Link
+    to="/parks/5D"
+  >
+    <button>
+      Back
+    </button>
+  </Link>
+  <div>
+    <Connect(InfoCard)
+      info={
+        Object {
+          "description": "Biggest visitor center ever.",
+          "directionsInfo": "Take a left.",
+          "directionsUrl": "https://www.exampledirections.com",
+          "id": "11",
+          "latLong": "{lat:35, lng:83}",
+          "name": "Visitor Center",
+          "parkCode": "pant",
+          "url": "https://www.examplecenter.com",
+        }
+      }
+    />
+  </div>
+</section>
+`;

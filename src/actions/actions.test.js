@@ -27,7 +27,7 @@ describe('actions', () => {
 			states: "TN",
 			url: "https://www.example.com",
 			weatherInfo: "Sunny"
-		}]
+		}];
     const expectedAction = {
     	type: 'GET_PARKS',
     	parks: [{ 

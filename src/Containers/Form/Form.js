@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import './Form.css';
-import { fetchParks } from '../../apiCalls';
 import { hasError, getParks, selectState, isLoading } from '../../actions';
 import { Link } from 'react-router-dom';
 

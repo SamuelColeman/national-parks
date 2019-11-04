@@ -8,7 +8,7 @@ export const InfoContainer = ({ parkInfo, infoName, parkId }) => {
 	const mappedInfo = parkInfo.map(info => {
 		return <InfoCard info={info}/>
 	})
-	if (mappedInfo.length > 1) {
+	if (mappedInfo.length > 0) {
 		return (
 			<section>
 				<h1>{infoName}</h1>
